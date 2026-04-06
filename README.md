@@ -6,3 +6,7 @@ Vanilla HTML, CSS, JavaScript로 만든 Counter
 ```shell
 npm create vite@latest .
 ```
+## CounterApp
+  * `setCount();`
+  * `setCount(() => set함수());`
+  * `setCount(() => set함수(이전state => 이전state + 1));`
