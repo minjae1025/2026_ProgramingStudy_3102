@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './todolist.css'
+import Button from './components/Button'
 // import './App.css'
 
 function TodoListApp() {
@@ -8,14 +9,17 @@ function TodoListApp() {
             <h1 className='todo__title'>Todo List</h1>
             <form className='todo__form'>
                 <input type="text" className='todo__input' name="" id="" placeholder='할 일을 입력하세요' />
-                <button className='todo__button todo__button--add'>add</button>
+                <Button className='todo__button todo__button--add'>add</Button>
             </form>
-            <div className='todo__list'>
+            <ul className='todo__list'>
+                <li className="todo__item todo__item--empty">
+                    <p>할 일 없음</p>
+                </li>
                 <li className='todo__item todo__complete'>
                     <input type="checkbox" name="" id="ck-1" className='todo__check' />
                     <label htmlFor="ck-1" className='todo__label'>놀기</label>
-                    <button className='todo__button todo__button--edit'>✏️</button>
-                    <button className='todo__button todo__button--delete'>❌</button>
+                    <Button className='todo__button todo__button--edit'>✏️</Button>
+                    <Button className='todo__button todo__button--delete'>❌</Button>
                 </li>
                 <li>
                     <input type="checkbox" name="" id="ck-2" />
@@ -23,7 +27,7 @@ function TodoListApp() {
                     <button>✏️</button>
                     <button>❌</button>
                 </li>
-            </div>
+            </ul>
         </div>
     )
 }
