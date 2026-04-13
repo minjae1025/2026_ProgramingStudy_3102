@@ -1,32 +1,32 @@
 import { useState } from 'react'
 import './todolist.css'
 import Button from './components/Button'
+import TodoItemEmpty from './components/TodoItemEmpty'
+import TodoHeader from './components/TodoHeader.jsx'
+import Checkbox from './components/Checkbox.jsx'
 // import './App.css'
 
 function TodoListApp() {
     return (
         <div className='todo'>
-            <h1 className='todo__title'>Todo List</h1>
+            <TodoHeader />
             <form className='todo__form'>
                 <input type="text" className='todo__input' name="" id="" placeholder='할 일을 입력하세요' />
                 <Button className='todo__button todo__button--add'>add</Button>
             </form>
             <ul className='todo__list'>
-                <li className="todo__item todo__item--empty">
-                    <p>할 일 없음</p>
-                </li>
+                <TodoItemEmpty />
                 <li className='todo__item todo__complete'>
-                    <input type="checkbox" name="" id="ck-1" className='todo__check' />
-                    <label htmlFor="ck-1" className='todo__label'>놀기</label>
+                    <Checkbox id="1">놀기</Checkbox>
                     <Button className='todo__button todo__button--edit'>✏️</Button>
                     <Button className='todo__button todo__button--delete'>❌</Button>
                 </li>
-                <li>
+                {/* <li>
                     <input type="checkbox" name="" id="ck-2" />
                     <label htmlFor="ck-2">집가기</label>
                     <button>✏️</button>
                     <button>❌</button>
-                </li>
+                </li> */}
             </ul>
         </div>
     )
