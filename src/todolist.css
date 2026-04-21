@@ -57,7 +57,7 @@
 }
 
 .todo__item--edit,
-.todo__item-delete {
+.todo__item--delete {
     font-size: 0.8rem;
     padding: 8px;
 }
