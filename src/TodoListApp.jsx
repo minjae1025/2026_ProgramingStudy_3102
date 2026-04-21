@@ -21,12 +21,31 @@ function TodoListApp() {
     const [todos, setTodos] = useState([]); //todos는 현재 투 두 값, setTodos는 투 두 값을 업데이트하는 함수
     const addTodo = (text) => setTodos((todos) => [...todos, new Todo(text)]);
 
+    const toggleTodo = (id) => {
+        setTodos((todos) => 
+            todos.map((todo) =>
+                todo.id === id ? {...todo, isCompleted: !todo.isCompleted} : todo
+            )
+        );
+    }
+
+    const deleteTodo = (id) => {
+        setTodos((todos) => todos.filter((todo) => todo.id !== id));
+    }
+
+    const editTodo = (id, editText) => {
+        setTodos((todos) =>
+            todos.map((todo) =>
+                todo.id === id ? {...todo, text: editText} : todo
+            )
+        );
+    }
 
     return (
         <div className='todo'>
             <TodoHeader />
+            <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} editTodo={editTodo} />
             <TodoAdder addTodo={addTodo} />
-            <TodoList todos={todos} />
         </div>
     )
 }

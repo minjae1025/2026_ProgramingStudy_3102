@@ -62,7 +62,16 @@
     padding: 8px;
 }
 
-.todo___item--complete, .todo__label {
+.todo__item--complete .todo__label {
     color: #999;
     text-decoration: line-through;
+}
+
+.todo__item--edit {
+    font-size: 1.2em;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+    flex: 1;
 }
